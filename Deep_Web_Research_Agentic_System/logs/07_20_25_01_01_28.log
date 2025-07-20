@@ -1,0 +1,4 @@
+[2025-07-20 01:02:21,245] 60 backend.logger.logger - INFO - Received query: prove report on Agents in AI?
+[2025-07-20 01:02:21,245] 61 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-20 01:02:21,246] 69 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-20 01:06:45,681] 90 backend.logger.logger - INFO - Graph saved as 'graph_architecture.png' in C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\frontend/statics\media/graph_architecture.png

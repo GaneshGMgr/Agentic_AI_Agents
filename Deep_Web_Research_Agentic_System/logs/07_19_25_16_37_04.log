@@ -1,0 +1,4 @@
+[2025-07-19 16:38:51,676] 60 backend.logger.logger - INFO - Received query: what is the capital of usa?
+[2025-07-19 16:38:51,677] 61 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 16:38:51,680] 69 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 16:40:40,081] 85 backend.logger.logger - INFO - Graph saved as 'graph_architecture.png' in C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\frontend/statics\media/graph_architecture.png

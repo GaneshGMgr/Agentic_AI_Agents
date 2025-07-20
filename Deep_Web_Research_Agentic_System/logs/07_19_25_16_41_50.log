@@ -1,0 +1,61 @@
+[2025-07-19 16:42:15,415] 60 backend.logger.logger - INFO - Received query: what is the capital of usa?
+[2025-07-19 16:42:15,415] 61 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 16:42:15,418] 69 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 16:44:18,338] 85 backend.logger.logger - INFO - Graph saved as 'graph_architecture.png' in C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\frontend/statics\media/graph_architecture.png
+[2025-07-19 16:52:29,506] 60 backend.logger.logger - INFO - Received query: ;sa;df
+[2025-07-19 16:52:29,506] 61 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 16:52:29,508] 69 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 16:54:16,743] 85 backend.logger.logger - INFO - Graph saved as 'graph_architecture.png' in C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\frontend/statics\media/graph_architecture.png
+[2025-07-19 17:03:16,585] 60 backend.logger.logger - INFO - Received query: asdkjf
+[2025-07-19 17:03:16,585] 61 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 17:03:16,587] 69 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 17:03:24,115] 53 backend.logger.logger - WARNING - LLM returned unknown label 'unknown'. Defaulting to 'unknown'.
+[2025-07-19 17:03:24,263] 96 backend.logger.logger - ERROR - Unhandled Exception: Traceback (most recent call last):
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\app.py", line 74, in query_travel_agent
+    final_state = compiled_graph.invoke(initial_state)
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\pregel\__init__.py", line 2844, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<8 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\pregel\__init__.py", line 2534, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\pregel\runner.py", line 162, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\pregel\retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\utils\runnable.py", line 625, in invoke
+    input = step.invoke(input, config)
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\utils\runnable.py", line 377, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\graph\branch.py", line 170, in _route
+    return self._finish(writer, input, result, config)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\graph\branch.py", line 206, in _finish
+    r if isinstance(r, Send) else self.ends[r] for r in result
+                                  ~~~~~~~~~^^^
+KeyError: 'unknown'
+During task with name 'query_classifier' and id '4206db85-756a-b631-db7c-9d0bbf9619be'
+

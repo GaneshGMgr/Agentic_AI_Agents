@@ -1,0 +1,48 @@
+[2025-07-20 18:33:08,828] 60 backend.logger.logger - INFO - Received query: Generate a report using academic studies on climate change.
+[2025-07-20 18:33:08,829] 61 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-20 18:33:08,830] 69 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-20 18:33:29,088] 101 backend.logger.logger - ERROR - Unhandled Exception: Traceback (most recent call last):
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\app.py", line 74, in query_travel_agent
+    final_state = compiled_graph.invoke(initial_state)
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\pregel\__init__.py", line 2844, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<8 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\pregel\__init__.py", line 2534, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\pregel\runner.py", line 162, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\pregel\retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\utils\runnable.py", line 623, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\utils\runnable.py", line 377, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\backend\tools\papers_search_agents_tool.py", line 54, in wrapped_tool
+    raise ValueError("Missing 'query' in LangGraph state")
+ValueError: Missing 'query' in LangGraph state
+During task with name 'preprint_agent' and id '2be35528-aa11-3ecc-88e6-bd5ba2c6be45'
+

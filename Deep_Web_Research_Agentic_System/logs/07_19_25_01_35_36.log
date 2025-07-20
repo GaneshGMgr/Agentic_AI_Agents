@@ -1,0 +1,9 @@
+[2025-07-19 01:35:52,621] 55 backend.logger.logger - INFO - Received query: what is the capital of usa?
+[2025-07-19 01:35:52,622] 56 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 01:35:52,624] 64 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 01:35:55,353] 96 backend.logger.logger - ERROR - Unhandled Exception: Traceback (most recent call last):
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\app.py", line 69, in query_travel_agent
+    final_state = compiled_graph.run(initial_state)
+                  ^^^^^^^^^^^^^^^^^^
+AttributeError: 'CompiledStateGraph' object has no attribute 'run'
+

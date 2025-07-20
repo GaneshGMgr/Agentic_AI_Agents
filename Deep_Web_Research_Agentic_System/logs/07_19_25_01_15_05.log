@@ -1,0 +1,28 @@
+[2025-07-19 01:15:32,412] 53 backend.logger.logger - INFO - Received query: what is the capital of usa?
+[2025-07-19 01:15:32,412] 54 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 01:15:32,414] 62 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 01:15:34,966] 84 backend.logger.logger - ERROR - Unhandled Exception: Traceback (most recent call last):
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\app.py", line 65, in query_travel_agent
+    react_app = graph()
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\backend\agents\agentic_pipeline.py", line 58, in __call__
+    return self.build_graph()
+           ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\backend\agents\agentic_pipeline.py", line 55, in build_graph
+    return graph.compile()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\graph\state.py", line 822, in compile
+    self.validate(
+    ~~~~~~~~~~~~~^
+        interrupt=(
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langgraph\graph\state.py", line 763, in validate
+    raise ValueError(
+        f"At '{start}' node, '{cond}' branch found unknown target '{end}'"
+    )
+ValueError: At 'query_classifier' node, 'route_decision' branch found unknown target 'research_router'
+

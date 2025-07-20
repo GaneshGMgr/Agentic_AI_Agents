@@ -1,0 +1,8 @@
+[2025-07-19 22:19:08,285] 60 backend.logger.logger - INFO - Received query: what is the capital of Malaysha?
+[2025-07-19 22:19:08,285] 61 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 22:19:08,286] 69 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 22:20:31,267] 90 backend.logger.logger - INFO - Graph saved as 'graph_architecture.png' in C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\frontend/statics\media/graph_architecture.png
+[2025-07-19 22:21:52,784] 60 backend.logger.logger - INFO - Received query: Generate a report on AI?
+[2025-07-19 22:21:52,784] 61 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 22:21:52,786] 69 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 22:22:17,774] 90 backend.logger.logger - INFO - Graph saved as 'graph_architecture.png' in C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\frontend/statics\media/graph_architecture.png

@@ -1,0 +1,9 @@
+[2025-07-19 02:07:13,610] 55 backend.logger.logger - INFO - Received query: what is the capital of usa?
+[2025-07-19 02:07:13,610] 56 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 02:07:13,612] 64 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 02:07:25,985] 96 backend.logger.logger - ERROR - Unhandled Exception: Traceback (most recent call last):
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\app.py", line 70, in query_travel_agent
+    ai_message = final_state.messages[-1]
+                 ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'messages'
+

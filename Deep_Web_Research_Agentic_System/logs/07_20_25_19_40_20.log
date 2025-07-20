@@ -1,0 +1,4 @@
+[2025-07-20 19:40:43,909] 60 backend.logger.logger - INFO - Received query: Generate a report using academic studies on climate change.
+[2025-07-20 19:40:43,909] 61 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-20 19:40:43,911] 69 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-20 19:43:00,168] 94 backend.logger.logger - INFO - Graph saved as 'graph_architecture.png' in C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\frontend/statics\media/graph_architecture.png

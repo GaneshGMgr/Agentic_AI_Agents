@@ -1,0 +1,26 @@
+[2025-07-20 18:11:10,713] 60 backend.logger.logger - INFO - Received query: Generate a report using academic studies on climate change.
+[2025-07-20 18:11:10,714] 61 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-20 18:11:10,719] 69 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-20 18:11:13,639] 101 backend.logger.logger - ERROR - Unhandled Exception: Traceback (most recent call last):
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\app.py", line 71, in query_travel_agent
+    graph = GraphBuilder(model_provider=model_key)
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\backend\agents\agentic_pipeline.py", line 51, in __init__
+    self.preprint_agent = make_search_preprint_papers_tool(self.llm)
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\backend\tools\papers_search_agents_tool.py", line 26, in make_search_preprint_papers_tool
+    """Search for preprint research papers on ArXiv based on the query."""
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langchain_core\tools\convert.py", line 264, in _tool_factory
+    return StructuredTool.from_function(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        func,
+        ^^^^^
+    ...<8 lines>...
+        error_on_invalid_docstring=error_on_invalid_docstring,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\venv\Lib\site-packages\langchain_core\tools\structured.py", line 211, in from_function
+    raise ValueError(msg)
+ValueError: Function must have a docstring if description not provided.
+

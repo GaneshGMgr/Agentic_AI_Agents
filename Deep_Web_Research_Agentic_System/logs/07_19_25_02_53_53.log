@@ -1,0 +1,12 @@
+[2025-07-19 02:54:27,980] 55 backend.logger.logger - INFO - Received query: what is the capital of usa?
+[2025-07-19 02:54:27,981] 56 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 02:54:27,982] 64 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 03:00:42,513] 55 backend.logger.logger - INFO - Received query: what is the capital of Argentina?
+[2025-07-19 03:00:42,514] 56 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 03:00:42,515] 64 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 03:05:15,032] 55 backend.logger.logger - INFO - Received query: what is the capital of France?
+[2025-07-19 03:05:15,033] 56 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 03:05:15,034] 64 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 03:06:48,780] 55 backend.logger.logger - INFO - Received query: what is the capital of Belgium?
+[2025-07-19 03:06:48,780] 56 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 03:06:48,782] 64 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)

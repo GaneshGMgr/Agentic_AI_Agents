@@ -1,0 +1,28 @@
+[2025-07-19 21:29:17,913] 60 backend.logger.logger - INFO - Received query: can you generate a report on ai agent?
+[2025-07-19 21:29:17,914] 61 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 21:29:17,916] 69 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 21:29:20,857] 101 backend.logger.logger - ERROR - Unhandled Exception: Traceback (most recent call last):
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\app.py", line 72, in query_travel_agent
+    compiled_graph = graph()
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\backend\agents\agentic_pipeline.py", line 70, in __call__
+    return self.build_graph()
+           ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\backend\agents\agentic_pipeline.py", line 47, in build_graph
+    graph.add_node("question_decomposer", self.report_generation.run)
+                                          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GraphBuilder' object has no attribute 'report_generation'
+
+[2025-07-19 21:32:02,252] 60 backend.logger.logger - INFO - Received query: generate report on ai?
+[2025-07-19 21:32:02,252] 61 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 21:32:02,254] 69 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 21:32:05,261] 101 backend.logger.logger - ERROR - Unhandled Exception: Traceback (most recent call last):
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\app.py", line 72, in query_travel_agent
+    compiled_graph = graph()
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\backend\agents\agentic_pipeline.py", line 70, in __call__
+    return self.build_graph()
+           ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\backend\agents\agentic_pipeline.py", line 47, in build_graph
+    graph.add_node("question_decomposer", self.report_generation.run)
+                                          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GraphBuilder' object has no attribute 'report_generation'
+

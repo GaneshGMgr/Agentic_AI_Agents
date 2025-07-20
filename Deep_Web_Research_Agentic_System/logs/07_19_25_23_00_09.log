@@ -1,0 +1,4 @@
+[2025-07-19 23:00:34,266] 60 backend.logger.logger - INFO - Received query: can you provide me details reports on Agentic Ai?
+[2025-07-19 23:00:34,266] 61 backend.logger.logger - INFO - Selected model: ollama-llama3
+[2025-07-19 23:00:34,268] 69 backend.logger.logger - INFO - Using model provider: ollama-llama3 (llama3.2:latest)
+[2025-07-19 23:01:16,283] 90 backend.logger.logger - INFO - Graph saved as 'graph_architecture.png' in C:\Users\ganes_3ck5\DataScience\Gen_AI\Course_GenAI\Gen_AI_In-Depth\Agentic_AI_Agents\Deep_Web_Research_Agentic_System\frontend/statics\media/graph_architecture.png

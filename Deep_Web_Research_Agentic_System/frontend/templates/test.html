@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dynamic Agentic AI</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../statics/style.css" />
+  </head>
+  <body data-theme="default">
+    <div class="container">
+      <!-- Theme Selector -->
+      <div class="theme-selector">
+        <button class="theme-btn" data-theme="default">Default</button>
+        <button class="theme-btn" data-theme="dark">Dark</button>
+        <button class="theme-btn" data-theme="light">Light</button>
+        <button class="theme-btn" data-theme="ocean">Ocean</button>
+        <button class="theme-btn" data-theme="sunset">Sunset</button>
+      </div>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="logo" id="dynamic-logo">AI</div>
+        <h1 id="dynamic-title">Agentic Research System</h1>
+        <p class="subtitle" id="dynamic-subtitle">
+          Multi-agent intelligence at your fingertips
+        </p>
+      </header>
+
+      <!-- Main Content -->
+      <main class="content">
+        <!-- Input Card -->
+        <section class="card input-card" id="input-card">
+          <form id="query-form"  action="/process-query">
+            <div class="input-group">
+              <input
+                type="text"
+                id="query"
+                name="query"
+                placeholder="Ask anything..."
+                autocomplete="off"
+              />
+              <div id="validation-message" class="error-message"></div>
+            </div>
+
+            <div class="model-selection">
+              <h3>Model Selection</h3>
+              <div class="model-options" id="model-options"></div>
+              <div
+                id="status"
+                class="message"
+                style="display: none"
+                aria-live="polite"
+                role="status"
+              ></div>
+            </div>
+
+            <button type="submit" id="submit-btn" class="dynamic-btn">
+              <span class="btn-text">Process Query</span>
+              <span class="btn-icon">→</span>
+            </button>
+          </form>
+
+          <div class="loading" id="loading" style="display: none">
+            <div class="spinner"></div>
+            <span>Processing..... </span>
+          </div>
+        </section>
+
+        <!-- Output Card -->
+        <section class="card output-card" id="output-card">
+          <div class="output-header">
+            <h2>Agent Response</h2>
+            <div class="output-actions">
+              <button class="action-btn" id="copy-btn">Copy</button>
+              <button class="action-btn" id="save-btn">Save</button>
+              <button class="action-btn" id="theme-btn">Change Color</button>
+            </div>
+          </div>
+          <div class="output-content" id="output">
+            <div class="placeholder">
+              <div class="placeholder-icon">🤖</div>
+              <p>Your AI-generated response will appear here</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Load Models -->
+    <script>
+      let selectedModel = null;
+      async function loadModels() {
+        const modelOptionsDiv = document.getElementById("model-options");
+
+        try {
+          const response = await fetch("http://127.0.0.1:8000/models");
+          const models = await response.json();
+          const modelsArray = Object.entries(models);
+          const defaultIndex = modelsArray.findIndex(
+            ([, details]) => details.model_name === "llama3.2:latest"
+          );
+          if (defaultIndex > 0) {
+            const [defaultModel] = modelsArray.splice(defaultIndex, 1);
+            modelsArray.unshift(defaultModel);
+          }
+
+          modelOptionsDiv.innerHTML = "";
+          for (const [modelKey, modelDetails] of modelsArray) {
+            const chip = document.createElement("div");
+            chip.classList.add("model-chip");
+            chip.setAttribute("data-value", modelKey);
+            chip.innerText = modelDetails.model_name;
+
+            chip.addEventListener("click", () => {
+              document
+                .querySelectorAll(".model-chip")
+                .forEach((c) => c.classList.remove("selected"));
+              chip.classList.add("selected");
+              selectedModel = modelKey;
+            });
+
+            modelOptionsDiv.appendChild(chip);
+          }
+
+          const firstChip = document.querySelector(".model-chip");
+          if (firstChip) {
+            firstChip.classList.add("selected");
+            selectedModel = firstChip.getAttribute("data-value");
+          }
+        } catch (error) {
+          console.error(" Failed to load models:", error);
+          modelOptionsDiv.innerText = "Failed to load models.";
+        }
+      }
+      window.addEventListener("DOMContentLoaded", loadModels);
+    </script>
+
+    <!-- Handle Query Submission -->
+    <script>
+      const form = document.getElementById("query-form");
+      const queryInput = document.getElementById("query");
+      const loadingDiv = document.getElementById("loading");
+      const outputDiv = document.getElementById("output");
+      const validationMessage = document.getElementById("validation-message");
+
+      // Escape HTML for safe rendering
+      function escapeHTML(str) {
+        const div = document.createElement("div");
+        div.innerText = str;
+        return div.innerHTML;
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const userQuery = queryInput.value.trim();
+        if (!userQuery) {
+          validationMessage.innerText = "Please enter a query.";
+          validationMessage.style.display = "block";
+          return;
+        }
+        validationMessage.style.display = "none";
+
+        if (!selectedModel) {
+          alert("Please select a model.");
+          return;
+        }
+
+        const payload = {
+          question: userQuery,
+          model: selectedModel,
+        };
+
+        try {
+          loadingDiv.style.display = "block";
+          console.log("Sending request with payload:", payload);
+          const response = await fetch("http://127.0.0.1:8000/process-query", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+          console.log("Raw fetch response:", response);
+
+          if (!response.ok) {
+            throw new Error(`Server error: ${response.status}`);
+          }
+
+          const data = await response.json();
+          loadingDiv.style.display = "none";
+          console.log("Response from server: ", data.answer)
+          console.log("Response from server: ", data.answer)
+
+          // Hide placeholder
+          const placeholder = outputDiv.querySelector(".placeholder");
+          if (placeholder) placeholder.style.display = "none";
+
+          // Display answer
+          outputDiv.innerHTML = `
+            <div class="response-text">
+              <p>${escapeHTML(data.answer)}</p>
+            </div>
+          `;
+
+          queryInput.value = "";
+        } catch (error) {
+          loadingDiv.style.display = "none";
+          outputDiv.innerText = "Error: " + error.message;
+          console.error("Error submitting query:", error);
+        }
+      });
+    </script>
+  </body>
+</html>
