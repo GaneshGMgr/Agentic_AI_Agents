@@ -1,0 +1,20 @@
+llm:
+  openai:
+    provider: "openai"
+    model_name: "o4-mini"
+
+  groq:
+    provider: "groq"
+    model_name: "deepseek-r1-distill-llama-70b"
+
+  ollama-deepseek:
+    provider: "ollama"
+    model_name: "deepseek-r1"
+
+  ollama-llama3:
+    provider: "ollama"
+    model_name: "llama3.2:latest"
+
+  ollama-mistral:
+    provider: "ollama"
+    model_name: "mistral"
