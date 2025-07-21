@@ -1,4 +1,4 @@
-# 🧠✈️ Agentic AI-Based Vacation Planner
+# 🧠 Agentic AI-Based Vacation Planner
 
 ## 📝 Brief
 
