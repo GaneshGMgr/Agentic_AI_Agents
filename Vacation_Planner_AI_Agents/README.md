@@ -110,13 +110,14 @@ This is a simple AI-based **vacation planner** powered by **Agentic AI** concept
 
 ## Some API KEY required
 
-OPENAI_API_KEY="" # API key for OpenAI (ChatGPT, GPT-4, etc.)
-GROQ_API_KEY="" # API key for Groq (if available – not always public or free)
-GOOGLE_API_KEY="" # API key to access models from Google AI Studio
-GPLACES_API_KEY="" # API key to fetch real-time places from Google Maps
-FOURSQUARE_API_KEY="" # Alternative to Google Places API – for place search
-TAVILAY_API_KEY="" # API for real-time information from the internet (check service availability)
-OPENWEATHERMAP_API_KEY="" # API for current weather information
-EXCHANGE_RATE_API_KEY="" # API to get currency exchange rates
+OPENAI_API_KEY=              # 🔑 API key for OpenAI (ChatGPT, GPT-4, etc.)
+GROQ_API_KEY=                # 🔑 API key for Groq (if available – not always public or free)
+GOOGLE_API_KEY=              # 🔑 API key to access models from Google AI Studio
+GPLACES_API_KEY=            # 📍 API key to fetch real-time places from Google Maps
+FOURSQUARE_API_KEY=         # 📍 Alternative to Google Places API – for place search
+TAVILAY_API_KEY=            # 🌐 API for real-time information from the internet (check service availability)
+OPENWEATHERMAP_API_KEY=     # 🌦️ API for current weather information
+EXCHANGE_RATE_API_KEY=      # 💱 API to get currency exchange rates
+
 
 Happy building! 🌍🧳🚀
