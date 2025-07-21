@@ -2,14 +2,6 @@
 
 ---
 
-## 📚 Resources
-
-- [YouTube Video](https://www.youtube.com/watch?v=LSk5KaEGVk4&list=PLRDl2inPrWQXSDfCjPKSeEMFLwYpfytxH)
-- [GitHub Repository](https://github.com/ed-donner/action/tree/main/1_deep_research)
-- [Github agentic_search_openai_langgraph](https://github.com/menonpg/agentic_search_openai_langgraph/blob/main/tools.py)
-
----
-
 ### 🔧 Tools & APIs Used
 
 1. **Redis Cache** (for fast access / context memory)  
