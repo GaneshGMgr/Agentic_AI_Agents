@@ -80,6 +80,7 @@
               <button class="action-btn" id="theme-btn">Change Color</button>
             </div>
           </div>
+          <div id="status-msg" style="margin-top:10px; color: green; font-weight: 500;"></div>
           <div class="output-content" id="output">
             <div class="placeholder">
               <div class="placeholder-icon">🤖</div>
@@ -88,7 +89,7 @@
           </div>
         </section>
       </main>
-    </div>
+    </div>   
 
     <!-- Load Models -->
     <script>
@@ -139,7 +140,7 @@
       window.addEventListener("DOMContentLoaded", loadModels);
     </script>
 
-    <!-- Handle Query Submission -->
+    <!-- Query Process -->
     <script>
       const form = document.getElementById("query-form");
       const queryInput = document.getElementById("query");
@@ -243,5 +244,43 @@
           }
         });
     </script>
+
+    <!-- Save Document -->
+    <script>
+      document.getElementById('save-btn').addEventListener('click', async () => {
+        const outputDiv = document.getElementById('output');
+        const statusDiv = document.getElementById('status-msg');
+    
+        // Get text content from output div
+        const responseText = outputDiv.innerText.trim();
+    
+        try {
+          const res = await fetch('http://127.0.0.1:8000/api/save-document', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text: responseText }),
+          });
+    
+          if (res.ok) {
+            const data = await res.json();
+            statusDiv.style.color = 'green';
+            statusDiv.innerText = data.message || 'Response saved successfully!';
+          } else {
+            statusDiv.style.color = 'red';
+            statusDiv.innerText = 'Failed to save the response.';
+          }
+        } catch (err) {
+          console.error('Error saving response:', err);
+          statusDiv.style.color = 'red';
+          statusDiv.innerText = 'Error saving response: ' + err.message;
+        }
+    
+        // Clear the message after 3 seconds
+        setTimeout(() => {
+          statusDiv.innerText = '';
+        }, 3000);
+      });
+    </script>
+
   </body>
 </html>

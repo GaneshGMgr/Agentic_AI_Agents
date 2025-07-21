@@ -6,6 +6,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from langgraph.graph import MessagesState
 from langchain_core.messages import HumanMessage
+from backend.utils.save_to_documents import save_document
 
 from dotenv import load_dotenv
 import traceback
@@ -18,7 +19,6 @@ from backend.utils.config_loader import load_config
 from fastapi import APIRouter
 
 load_dotenv()
-
 
 app = FastAPI()
 api_router = APIRouter()
@@ -39,10 +39,13 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all custom headers (Content-Type, Authorization, etc.)
 )
 
+class SaveRequest(BaseModel):
+    text: str
 
 class QueryRequest(BaseModel):
     question: str
     model: str = "ollama-llama3"
+
 
 # API Routes on router
 @api_router.get("/models")
@@ -53,6 +56,7 @@ async def get_models():
     except Exception as e:
         logger.error(f"Error loading models: {str(e)}")
         return JSONResponse(status_code=500, content={"error": str(e)})
+
 
 @api_router.post("/process-query")
 async def query_travel_agent(query: QueryRequest):
@@ -70,7 +74,11 @@ async def query_travel_agent(query: QueryRequest):
 
         graph = GraphBuilder(model_provider=model_key)
         compiled_graph = graph()
+
+        # Initialize state with user question
         initial_state = MessagesState(messages=[HumanMessage(content=query.question)])
+
+        # Run the graph pipeline
         final_state = compiled_graph.invoke(initial_state)
 
         answer = "No response generated."
@@ -83,10 +91,7 @@ async def query_travel_agent(query: QueryRequest):
             urls = final_state.get("found_urls", [])
             papers = final_state.get("papers", [])
 
-        # print("Response answer from Server: ", answer)
-        # print("Response url's from Server: ", urls)
-        # print("Response papers from Server: ", papers)
-
+        # Try saving the graph image for visualization
         try:
             png_graph = compiled_graph.get_graph().draw_mermaid_png()
             with open(GRAPH_IMAGE_PATH, "wb") as f:
@@ -97,7 +102,7 @@ async def query_travel_agent(query: QueryRequest):
 
         return JSONResponse(status_code=200, content={
             "answer": answer,
-            # "papers": papers,
+            # "papers": papers,  # Uncomment if you want to return papers as well
             "references": urls,
             "model_used": model_name_used
         })
@@ -110,13 +115,31 @@ async def query_travel_agent(query: QueryRequest):
         logger.error(f"Unhandled Exception: {traceback.format_exc()}")
         return JSONResponse(status_code=500, content={"error": "Internal Server Error"})
 
+
+@api_router.post("/save-document")
+async def save_document_api(request: SaveRequest):
+    try:
+        logger.info("Saving document from API request")
+        filename = save_document(request.text)
+        logger.info(f"Document saved as {filename}")
+        return {"message": f"Document saved as {filename}"}
+    except CustomException as ce:
+        logger.error(f"CustomException in save_document_api: {ce}\n{traceback.format_exc()}")
+        return JSONResponse(status_code=400, content={"error": str(ce)})
+    except Exception as e:
+        logger.error(f"Unhandled exception in save_document_api: {traceback.format_exc()}")
+        return JSONResponse(status_code=500, content={"error": "Internal Server Error"})
+
+
 @app.get("/health")
 async def health():
     return {"status": "ok"}
 
+
 @app.get("/", include_in_schema=False)
 async def root_redirect():
     return RedirectResponse(url="/index.html")
+
 
 # Register API router under /api prefix
 app.include_router(api_router, prefix="/api")
@@ -124,10 +147,6 @@ app.include_router(api_router, prefix="/api")
 # Serve frontend static files from root /
 app.mount("/statics", StaticFiles(directory=os.path.join(BASE_DIR, "frontend/statics")), name="statics")
 app.mount("/", StaticFiles(directory=os.path.join(BASE_DIR, "frontend/templates"), html=True), name="frontend")
-
-# if __name__ == "__main__":
-#     import uvicorn
-#     uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=False)
 
 # === Command ===
 # Run with: uvicorn app:app --reload --host 0.0.0.0 --port 8000

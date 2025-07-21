@@ -46,55 +46,14 @@
 
 ---
 
+## 🖥️ Command to Run Server
 
-# command to run server
+```bash
 ollama serve
 uvicorn app:app --host 0.0.0.0 --port 8000
 
+# or for hot-reload during development
 uvicorn app:app --reload --host 0.0.0.0 --port 8000
+```
 
-
-
-🧠 research_paper — Mentions academic/research sources
-These should all be classified as research_paper:
-
-"Generate a report using academic studies on climate change."
-
-"Summarize the latest findings from research papers on AI ethics."
-
-"Prove your answer with scholarly articles."
-
-"I want evidence from research papers on the effectiveness of remote learning."
-
-"Provide insights from peer-reviewed studies about mental health."
-
-"Explain using research papers how sleep affects productivity."
-
-📄 report_generation — General requests without needing academic sources
-These should be classified as report_generation:
-
-"Write a report on the history of the internet."
-
-"Summarize the impact of social media on teenagers."
-
-"Generate a report about the benefits of exercise."
-
-"Create a short report on global warming for school."
-
-"Write a brief summary of renewable energy technologies."
-
-Even though these sound formal, none ask for academic or research-backed material — so they should fall under report_generation.
-
-🌐 google_search — Basic, factual, or current-event questions
-These should be classified as google_search:
-
-"Who is the current Prime Minister of Canada?"
-
-"What is the population of Tokyo?"
-
-"Best smartphones under $500 in 2025."
-
-"When was the iPhone 16 released?"
-
-"Where is the Eiffel Tower located?"
-
+---

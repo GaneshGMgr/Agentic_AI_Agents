@@ -58,4 +58,3 @@ class ResearchClassifierTool:
         else:
             logger.warning(f"LLM returned unknown label '{text}'. Defaulting to 'unknown'.")
             return "unknown"
-
