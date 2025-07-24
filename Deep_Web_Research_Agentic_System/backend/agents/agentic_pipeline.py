@@ -60,9 +60,9 @@ class GraphBuilder:
     def build_graph(self):
         graph = StateGraph(CustomState)
 
-        graph.add_node("query_classifier", self.query_classifier_agent.run)
-        graph.add_node("internet_search_agent", self.internet_search_agent.run)
-        graph.add_node("question_decomposer", self.question_decomposer.run)
+        graph.add_node("query_classifier", self.query_classifier_agent.run) # run(state) i.e is run(query)
+        graph.add_node("internet_search_agent", self.internet_search_agent.run) # run(query) or run(query + subquery) query_classifier report_generator
+        graph.add_node("question_decomposer", self.question_decomposer.run) # run(query)
         graph.add_node("research_classifier_agent", self.research_classifier_agent.run)
         graph.add_node("report_writting_agent", self.report_writting_agent.run)
         graph.add_node("preprint_agent", self.preprint_agent)

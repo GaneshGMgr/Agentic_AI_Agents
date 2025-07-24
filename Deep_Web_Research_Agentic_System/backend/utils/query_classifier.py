@@ -12,13 +12,14 @@ class QueryClassifierTool:
             self.invoke_method = self.llm.invoke  # use invoke method
 
     def query_classifier_run(self, state):
-        messages = state.get("messages")
+        messages = state.get("messages") # state is a HumanMessage that contain messages
         if not messages or not isinstance(messages, list):
             logger.error("State missing 'messages' or it's empty/invalid.")
             raise ValueError("Invalid state: 'messages' must be a non-empty list.")
 
-        last_message = messages[-1]
-        query = getattr(last_message, "content", None)
+        last_message = messages[-1]  # Take the last message from the list of messages
+        query = getattr(last_message, "content", None)  # Extract the 'content' attribute from last_message, which is the actual query text
+
         if not query:
             logger.error("Last message missing 'content' attribute.")
             raise ValueError("Invalid message format: expected 'content' attribute.")
@@ -36,13 +37,13 @@ class QueryClassifierTool:
 
         return state
 
-    def route_decision(self, state):
+    def route_decision_extraction_validation(self, state):
         messages = state.get("messages", [])
         if not messages:
             logger.warning("No messages in state for routing decision; defaulting to 'unknown'.")
             return "unknown"
 
-        last_msg = messages[-1]
+        last_msg = messages[-1] # Get last message (just added by LLM)
         if hasattr(last_msg, "content"):
             text = last_msg.content.strip().lower()
         else:

@@ -40,7 +40,7 @@ class ResearchClassifierTool:
 
         return state
         
-    def route_decision(self, state):
+    def route_decision_extraction_validation(self, state):
         messages = state.get("messages", [])
         if not messages:
             logger.warning("No messages in state for routing decision; defaulting to 'unknown'.")

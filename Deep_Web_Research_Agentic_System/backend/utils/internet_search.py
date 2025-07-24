@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from langchain_tavily import TavilySearch
 import os
 import getpass
+import re
 
 load_dotenv()
 if not os.environ.get("TAVILY_API_KEY"):

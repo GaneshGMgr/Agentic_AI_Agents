@@ -120,4 +120,4 @@ OPENWEATHERMAP_API_KEY=     # 🌦️ API for current weather information
 EXCHANGE_RATE_API_KEY=      # 💱 API to get currency exchange rates
 
 
-Happy building! 🌍🧳🚀
+🌍🧳🚀

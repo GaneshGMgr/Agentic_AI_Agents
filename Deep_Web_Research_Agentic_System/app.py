@@ -61,8 +61,8 @@ async def get_models():
 @api_router.post("/process-query")
 async def query_travel_agent(query: QueryRequest):
     try:
-        logger.info(f"Received query: {query.question}")
-        logger.info(f"Selected model: {query.model}")
+        # logger.info(f"Received query: {query.question}")
+        # logger.info(f"Selected model: {query.model}")
 
         valid_models = load_config().get("llm", {})
         model_key = query.model if query.model in valid_models else "ollama-llama3"
@@ -72,6 +72,7 @@ async def query_travel_agent(query: QueryRequest):
         model_name_used = valid_models.get(model_key, {}).get("model_name", "unknown")
         logger.info(f"Using model provider: {model_key} ({model_name_used})")
 
+        print("Received query: ", model_key)
         graph = GraphBuilder(model_provider=model_key)
         compiled_graph = graph()
 

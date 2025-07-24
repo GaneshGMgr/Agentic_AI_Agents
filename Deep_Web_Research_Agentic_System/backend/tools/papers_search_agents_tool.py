@@ -50,7 +50,7 @@ def make_search_preprint_papers_tool(llm) -> Callable:
     return wrapped_tool
 
 
-# === ✅ Multidisciplinary Tool (Matching Structure) ===
+# === Multidisciplinary Tool (Matching Structure) ===
 def make_search_multidisciplinary_papers_tool(llm) -> Callable:
     class InputModel(BaseModel):
         query: str
@@ -86,7 +86,7 @@ def make_search_multidisciplinary_papers_tool(llm) -> Callable:
     return wrapped_tool
 
 
-# === ✅ Biomedical Tool (Matching Structure) ===
+# === Biomedical Tool (Matching Structure) ===
 def make_search_biomedical_papers_tool(llm) -> Callable:
     class InputModel(BaseModel):
         query: str

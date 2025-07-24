@@ -12,7 +12,7 @@ class ResearchClassifierAgent:
         Appends the response to the message list.
         """
         new_state = self.classifier_tool.research_classifier_run(state)
-        label = self.classifier_tool.route_decision(new_state)
+        label = self.classifier_tool.route_decision_extraction_validation(new_state)
         # Append route_label as a message:
         new_state["messages"].append(AIMessage(content=f"route_label: {label}"))
         print(f"[QueryClassifierAgent] route_label set to: {label}")

@@ -7,7 +7,7 @@ class QueryClassifierAgent:
 
     def run(self, state):
         new_state = self.classifier_tool.query_classifier_run(state)
-        label = self.classifier_tool.route_decision(new_state)
+        label = self.classifier_tool.route_decision_extraction_validation(new_state)
         
         # Append route_label as a message:
         new_state["messages"].append(AIMessage(content=f"route_label: {label}"))

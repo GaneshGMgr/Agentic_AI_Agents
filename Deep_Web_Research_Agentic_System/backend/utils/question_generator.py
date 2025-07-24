@@ -8,5 +8,5 @@ class QuestionGeneratorTool:
         response = self.llm.invoke(input_messages)
         return response["content"] if isinstance(response, dict) else str(response)
 
-    def route_decision(self, state):
-        return state["messages"][-1]["content"].strip().lower()
+    # def route_decision(self, state):
+    #     return state["messages"][-1]["content"].strip().lower()
