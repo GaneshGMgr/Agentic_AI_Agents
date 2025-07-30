@@ -1,0 +1,4 @@
+## 📚 Resources
+
+- [YouTube Tutorial Series](https://www.youtube.com/watch?v=LSk5KaEGVk4&list=PLRDl2inPrWQXSDfCjPKSeEMFLwYpfytxH)
+- [Reference GitHub Repo](https://github.com/ed-donner/action/tree/main/2_engineering_team)

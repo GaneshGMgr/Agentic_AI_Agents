@@ -2,11 +2,6 @@
 
 A CrewAI-powered autonomous agent system that transforms natural language software requirements into production-ready Python modules. Simulates a full software team with agents acting as engineering lead, backend developer, test engineer, and frontend UI creator. Uses local LLMs via Ollama (LLaMA3, Mistral, DeepSeek) to generate designs, code, unit tests, and Gradio-based demos — fully offline.
 
-## 📚 Resources
-
-- [YouTube Tutorial Series](https://www.youtube.com/watch?v=LSk5KaEGVk4&list=PLRDl2inPrWQXSDfCjPKSeEMFLwYpfytxH)
-- [Reference GitHub Repo](https://github.com/ed-donner/action/tree/main/2_engineering_team)
-
 ## 🛠 Installation & Setup
 
 ### Step 1: Install `uv` (fast Python package manager)
