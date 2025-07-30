@@ -1,9 +1,11 @@
 # SoftwareEngineers Crew
 
+A CrewAI-powered autonomous agent system that transforms natural language software requirements into production-ready Python modules. Simulates a full software team with agents acting as engineering lead, backend developer, test engineer, and frontend UI creator. Uses local LLMs via Ollama (LLaMA3, Mistral, DeepSeek) to generate designs, code, unit tests, and Gradio-based demos — fully offline.
+
 ## 📚 Resources
 
-- [YouTube Video](https://www.youtube.com/watch?v=LSk5KaEGVk4&list=PLRDl2inPrWQXSDfCjPKSeEMFLwYpfytxH)
-- [GitHub Link](https://github.com/ed-donner/action/tree/main/2_engineering_team)
+- [YouTube Tutorial Series](https://www.youtube.com/watch?v=LSk5KaEGVk4&list=PLRDl2inPrWQXSDfCjPKSeEMFLwYpfytxH)
+- [Reference GitHub Repo](https://github.com/ed-donner/action/tree/main/2_engineering_team)
 
 ## 🛠 Installation & Setup
 
@@ -13,55 +15,51 @@
 pip install uv
 ```
 
-### Step 2: (Optional but recommended) Lock dependencies and install them using crewAI
+### Step 2: (Optional but recommended) Install dependencies with CrewAI
 
 ```bash
 crewai install
 ```
 
-### Step 3: Create a crew using the predefined template
+### Step 3: Create a new crew from the predefined template
 
 ```bash
 crewai create crew software_engineers
 ```
 
-### Step 6: Run your crew
-
-```bash
-crewai run
-```
-
 ### Step 4: Activate the virtual environment
 
 ```bash
-.\.venv\Scripts\activate
+.\.venv\Scripts\activate  # Windows
+# Or
+source .venv/bin/activate  # macOS/Linux
 ```
 
-### Step 5: Start the Ollama model server
+### Step 5: Start the Ollama LLM server
 
 ```bash
 ollama server
 ```
 
-> Starts the Ollama server locally, which provides LLMs like LLaMA, Deepseek, Mistral, etc., used by the agents.
+> This launches the Ollama server locally, which provides models like LLaMA, DeepSeek, Mistral, etc.
 
-### Step 6: Run your crew
+### Step 6: Run your CrewAI team
 
 ```bash
 crewai run
 ```
 
-> Launches multi-agent software engineering crew using the configurations and tasks defined.
+> This kicks off your multi-agent software engineering crew using the configurations and task workflows defined.
 
 ---
 
 ## 💬 Support & Community
 
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+- 📄 [Documentation](https://docs.crewai.com)
+- 💬 [GitHub Discussions](https://github.com/joaomdmoura/crewai)
+- 🧵 [Discord Community](https://discord.com/invite/X4JWnZnxPb)
+- 🤖 [Chat with Docs](https://chatg.pt/DWjSBZn)
 
 ---
 
-Let's create wonders together with the power and simplicity of crewAI 🚀
+Let's build powerful software modules with the simplicity of CrewAI and the autonomy of local LLMs! 🚀

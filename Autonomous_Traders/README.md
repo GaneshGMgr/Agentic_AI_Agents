@@ -2,9 +2,4 @@
 
 ---
 
-## 📚 Resources
-
-- [Youtub Video](https://www.youtube.com/watch?v=LSk5KaEGVk4&list=PLRDl2inPrWQXSDfCjPKSeEMFLwYpfytxH)
-- [Github Link](https://github.com/ed-donner/action/tree/main/3_trading_floor)
-
 ---
