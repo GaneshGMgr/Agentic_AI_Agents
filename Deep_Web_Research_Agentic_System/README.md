@@ -5,10 +5,10 @@ It uses tools like **Tavily** and **DuckDuckGo** to fetch real-time data and aca
 
 The project runs completely **locally** using an **Ollama-hosted LLM model** — so we don’t need to rely on cloud APIs like OpenAI or Anthropic to try it out. That makes it easier, private, and great for learning how to build LLM-powered tools with minimal external dependencies.
 
-The main goal here is to experiment with how a system can:
-- Search the web
-- Query scholarly APIs
-- Understand questions better using local AI models
+The main goal here is to experiment with how a system can:  
+- Search the web  
+- Query scholarly APIs  
+- Understand questions better using local AI models  
 - And manage responses in a structured way (with caching and multi-source support)
 
 It’s not meant to be production-ready — just a solid learning experiment.
@@ -63,16 +63,14 @@ Gives access to semantic metadata and citations for academic papers.
 ## 📸 Architecture of this System
 
 <div align="center">
-  <img src="frontend/statics/media/graph_architecture.png" width="300" alt="Architecture"/>
+  <img src="frontend/statics/media/graph_architecture.png" width="300" alt="System architecture diagram"/>
 </div>
 
 ---
 
+````markdown
 ## 🚀 Running the Agentic Research Server
 
-Start the Ollama server and then the FastAPI backend:
-
-```bash
 # Start Ollama (model hosting for LLMs)
 ollama serve
 
@@ -83,6 +81,8 @@ uvicorn app:app --host 0.0.0.0 --port 8000
 uvicorn app:app --reload --host 0.0.0.0 --port 8000
 
 ---
+
+
 ## 📂 Sample Output Directory
 
 - [Deep_Web_Research_Response_2025-07-21_01-01-10.md](backend/save_to_documents/Deep_Web_Research_Response_2025-07-21_01-01-10.md)

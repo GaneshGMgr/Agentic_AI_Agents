@@ -133,13 +133,13 @@ EXCHANGE_RATE_API_KEY=      # 💱 API to get currency exchange rates
 ## 📸 Sample Outputs
 
 <div align="center">
-  <img src="foutputs/Screenshot 2025-07-09 115617.png" width="300" alt="Sample Output"/>
-  <img src="foutputs/Screenshot 2025-07-09 115735.png" width="300" alt="Sample Output"/>
-  <img src="foutputs/Screenshot 2025-07-09 115953.png" width="300" alt="Sample Output"/>
-  <img src="foutputs/Screenshot 2025-07-09 120050.png" width="300" alt="Sample Output"/>
-  <img src="foutputs/Screenshot 2025-07-09 120242.png" width="300" alt="Sample Output"/>
-  <img src="foutputs/Screenshot 2025-07-09 120350.png" width="300" alt="Sample Output"/>
-  <img src="foutputs/Screenshot 2025-07-09 120422.png" width="300" alt="Sample Output"/>
+  <img src="outputs/Screenshot 2025-07-09 115617.png" width="300" alt="Sample Output"/>
+  <img src="outputs/Screenshot 2025-07-09 115735.png" width="300" alt="Sample Output"/>
+  <img src="outputs/Screenshot 2025-07-09 115953.png" width="300" alt="Sample Output"/>
+  <img src="outputs/Screenshot 2025-07-09 120050.png" width="300" alt="Sample Output"/>
+  <img src="outputs/Screenshot 2025-07-09 120242.png" width="300" alt="Sample Output"/>
+  <img src="outputs/Screenshot 2025-07-09 120350.png" width="300" alt="Sample Output"/>
+  <img src="outputs/Screenshot 2025-07-09 120422.png" width="300" alt="Sample Output"/>
 </div>
 
 🌍🧳🚀
