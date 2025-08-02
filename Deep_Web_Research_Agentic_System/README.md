@@ -67,22 +67,6 @@ Gives access to semantic metadata and citations for academic papers.
 </div>
 
 ---
-
-````markdown
-## 🚀 Running the Agentic Research Server
-
-# Start Ollama (model hosting for LLMs)
-ollama serve
-
-# Start the FastAPI server
-uvicorn app:app --host 0.0.0.0 --port 8000
-
-# (Optional) Use hot reload for development
-uvicorn app:app --reload --host 0.0.0.0 --port 8000
-
----
-
-
 ## 📂 Sample Output Directory
 
 - [Deep_Web_Research_Response_2025-07-21_01-01-10.md](backend/save_to_documents/Deep_Web_Research_Response_2025-07-21_01-01-10.md)
@@ -91,4 +75,16 @@ uvicorn app:app --reload --host 0.0.0.0 --port 8000
 - [Deep_Web_Research_Response_2025-07-21_03-08-47.md](backend/save_to_documents/Deep_Web_Research_Response_2025-07-21_03-08-47.md)
 - [Deep_Web_Research_Response_2025-07-21_14-19-49.md](backend/save_to_documents/Deep_Web_Research_Response_2025-07-21_14-19-49.md)
 
+
+## 🚀 Running the Agentic Research Server
+
+```bash
+# Start Ollama (model hosting for LLMs)
+ollama serve
+
+# Start the FastAPI server
+uvicorn app:app --host 0.0.0.0 --port 8000
+
+# (Optional) Use hot reload for development
+uvicorn app:app --reload --host 0.0.0.0 --port 8000
 ---
